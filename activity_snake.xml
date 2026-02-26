@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F2F1">
+
+    <!-- Игровое поле -->
+    <com.notes.app.SnakeView
+        android:id="@+id/snakeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Верхняя панель: Счет и Прогресс -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Счёт: 0"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#00796B"/>
+
+        <ProgressBar
+            android:id="@+id/snakeProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="0"
+            android:max="50"
+            android:progressTint="#F48FB1"/>
+    </LinearLayout>
+
+    <!-- Экран GAME OVER (скрыт в начале) -->
+    <LinearLayout
+        android:id="@+id/gameOverLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ИГРА ОКОНЧЕНА"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnRestart"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#4CAF50"
+            android:text="ПОПРОБОВАТЬ СНОВА" />
+
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#F44336"
+            android:text="ВЕРНУТЬСЯ В МЕНЮ" />
+    </LinearLayout>
+
+</FrameLayout>
